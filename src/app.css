@@ -1,3 +1,45 @@
 @import 'tailwindcss';
-@plugin '@tailwindcss/forms';
-@plugin '@tailwindcss/typography';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+	/* Grey Shades */
+	--color-grey-1100: #1e1f21;
+	--color-grey-1000: #26282b;
+	--color-grey-900: #2d3434;
+	--color-grey-700: #50595f;
+	--color-grey-500: #6f767f;
+	--color-grey-400: #9ca6b2;
+	--color-grey-300: #b2c1ca;
+	--color-grey-200: #c7d2d7;
+	--color-grey-100: #cecece;
+	--color-grey-50: #f6f6f6;
+	--color-grey-0: #ffffff;
+
+	/* Blue Shades */
+	--color-blue-600: #0a4760;
+	--color-blue-500: #2793ce;
+	--color-blue-400: #75b8dc;
+	--color-blue-300: #9bdaff;
+	--color-blue-200: #b8cfec;
+	--color-blue-100: #c8dee9;
+
+	/* Green Shades */
+	--color-green-600: #3d5a20;
+	--color-green-400: #7b965f;
+	--color-green-300: #7ca340;
+	--color-green-200: #8fc04b;
+	--color-green-100: #cdeb9f;
+
+	--text-xxl: 55px;
+	--text-xl: 45px;
+	--text-lg: 26px;
+	--text-base: 16px;
+	--text-productxl: 30px;
+	--text-productlg: 22px;
+	--text-productbase: 18px;
+	--text-productsm: 14px;
+	--text-productxs: 12px;
+
+	--font-raleway: 'Raleway', sans-serif;
+}
