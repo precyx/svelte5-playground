@@ -6,7 +6,7 @@
 	let { children } = $props();
 </script>
 
-<div class="text-dark min-h-screen bg-white dark:bg-black dark:text-white">
+<div class="text-dark dark:bg-grey-1100 min-h-screen bg-white dark:text-white">
 	<Nav />
 	{@render children()}
 </div>

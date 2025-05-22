@@ -7,7 +7,7 @@
 	import IconGlobe from '$lib/icons/IconGlobe.svelte';
 	import { AsYouType, parsePhoneNumberFromString } from 'libphonenumber-js';
 	import type { CountryCode } from 'libphonenumber-js';
-	import { sleep } from '$lib/utils/Utils';
+	import { sleep } from '$lib/utils/utils';
 
 	type Props = {
 		id?: string;
@@ -213,7 +213,7 @@
 						}}
 						class=" relative block h-full w-auto cursor-pointer rounded-l-md border-0 border-t-2 border-b-2 border-l-2 px-4 py-3 pr-[25px] pl-[50px] break-keep whitespace-pre focus:ring-0 sm:pr-[35px]
                     {error
-							? 'dark:bg-opacity-20 dark:placeholder-opacity-40 border-red-400  bg-red-50 text-red-400 placeholder-red-400 focus:border-red-400 dark:bg-red-900 dark:placeholder-white'
+							? 'dark:bg-opacity-20 dark:placeholder-opacity-40 border-red-400  bg-red-50 text-red-400 placeholder-red-400 focus:border-red-400 dark:bg-red-900/20 dark:placeholder-white'
 							: ' border-grey-300 bg-grey-50 text-grey-500 placeholder-grey-300 dark:border-grey-700 dark:bg-grey-900 dark:text-grey-200 dark:focus:border-grey-0 focus:border-blue-500'}"
 					>
 						<div class="text-[14px] sm:text-base">
@@ -238,7 +238,7 @@
 						type="text"
 						class="relative block w-full w-full cursor-text rounded-r-md border-2 px-4 py-3 focus:ring-0
                         {error
-							? 'dark:bg-opacity-20 dark:placeholder-opacity-40 border-red-400  bg-red-50 text-red-400 placeholder-red-400 focus:border-red-400 dark:bg-red-900 dark:placeholder-white'
+							? 'dark:bg-opacity-20 dark:placeholder-opacity-40 border-red-400  bg-red-50 text-red-400 placeholder-red-400 focus:border-red-400 dark:bg-red-900/20 dark:placeholder-white'
 							: ' border-grey-300 bg-grey-50 text-grey-500 placeholder-grey-300 dark:border-grey-700 dark:bg-grey-900 dark:text-grey-200 dark:focus:border-grey-0 focus:border-blue-500'}"
 						onclick={clickPhoneInput}
 						oninput={() => {
