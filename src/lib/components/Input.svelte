@@ -6,12 +6,16 @@
 
 	type Props = WithElementRef<
 		Omit<HTMLInputAttributes, 'type'> &
-			({ type: 'file'; files?: FileList } | { type?: InputType; files?: undefined })
+			(
+				| { type: 'file'; files?: FileList; label?: string }
+				| { type?: InputType; files?: undefined; label?: string }
+			)
 	>;
 
 	let {
 		ref = $bindable(null),
 		value = $bindable(),
+		label,
 		type,
 		files = $bindable(),
 		class: className,
@@ -19,6 +23,9 @@
 	}: Props = $props();
 </script>
 
+{#if label}
+	<div class="mb-2">{label}</div>
+{/if}
 {#if type === 'file'}
 	<input
 		bind:this={ref}

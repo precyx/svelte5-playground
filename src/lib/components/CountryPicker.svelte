@@ -140,7 +140,7 @@
 					showPopover = false;
 					//inputMode = 'select';
 				}}
-				class=" relative mt-1 block w-full cursor-pointer rounded-md border-2 px-4 py-3 pl-[55px] focus:ring-0
+				class=" relative mt-1 block w-full cursor-pointer rounded-md border-2 px-4 py-3 pl-[55px] outline-none focus:ring-0
           {error
 					? 'dark:bg-opacity-20 dark:placeholder-opacity-40 border-red-400  bg-red-50 text-red-400 placeholder-red-400 focus:border-red-400 dark:bg-red-900 dark:placeholder-white'
 					: ' border-grey-300 bg-grey-50 text-grey-500 placeholder-grey-300 dark:border-grey-700 dark:bg-grey-900 dark:text-grey-200 dark:focus:border-grey-0 focus:border-blue-500'}"

@@ -183,8 +183,8 @@
 					showPopover = false;
 					inputMode = 'select';
 				}}
-				class=" border-grey-300 bg-grey-50 text-grey-500 placeholder-grey-300 dark:border-grey-700 dark:bg-grey-900 dark:text-grey-200 dark:focus:border-grey-0 relative
-                mt-1 block w-full rounded-md border-2 px-4 py-3 focus:border-blue-500 focus:ring-0"
+				class=" border-grey-300 bg-grey-50 text-grey-500 placeholder-grey-300 dark:placeholder-grey-700 dark:border-grey-700 dark:bg-grey-900 dark:text-grey-200 dark:focus:border-grey-0 relative mt-1
+                block w-full rounded-md border-2 px-4 py-3 outline-none focus:border-blue-500 focus:ring-0"
 			/>
 		{:else if inputMode == 'select'}
 			<div class="pointer-events-none absolute top-[16px] left-5 z-10 mr-4 flex items-center">
@@ -211,10 +211,10 @@
 						use:clickOutside={() => {
 							showPopover = false;
 						}}
-						class=" relative block h-full w-auto cursor-pointer rounded-l-md border-0 border-t-2 border-b-2 border-l-2 px-4 py-3 pr-[25px] pl-[50px] break-keep whitespace-pre focus:ring-0 sm:pr-[35px]
+						class=" relative block h-full w-auto cursor-pointer rounded-l-md border-0 border-t-2 border-b-2 border-l-2 px-4 py-3 pr-[25px] pl-[50px] break-keep whitespace-pre outline-none focus:ring-0 sm:pr-[35px]
                     {error
-							? 'dark:bg-opacity-20 dark:placeholder-opacity-40 border-red-400  bg-red-50 text-red-400 placeholder-red-400 focus:border-red-400 dark:bg-red-900/20 dark:placeholder-white'
-							: ' border-grey-300 bg-grey-50 text-grey-500 placeholder-grey-300 dark:border-grey-700 dark:bg-grey-900 dark:text-grey-200 dark:focus:border-grey-0 focus:border-blue-500'}"
+							? 'dark:bg-opacity-20 dark:text-grey-200 dark:placeholder-opacity-40 dark:placeholder-grey-700 text-grey-500  border-red-400 bg-red-50 placeholder-red-400 focus:border-red-400 dark:bg-red-900/10 focus:dark:bg-red-900/20'
+							: ' border-grey-300 bg-grey-50 text-grey-500 placeholder-grey-300 dark:placeholder-grey-700 dark:border-grey-700 dark:bg-grey-900 dark:text-grey-200 dark:focus:border-grey-0 focus:border-blue-500'}"
 					>
 						<div class="text-[14px] sm:text-base">
 							{'+' + (selectedCountry?.phone || selectText)}
@@ -236,10 +236,10 @@
 						bind:value={phoneText}
 						placeholder="00 000 000"
 						type="text"
-						class="relative block w-full w-full cursor-text rounded-r-md border-2 px-4 py-3 focus:ring-0
+						class="relative block w-full w-full cursor-text rounded-r-md border-2 px-4 py-3 outline-none focus:ring-0
                         {error
-							? 'dark:bg-opacity-20 dark:placeholder-opacity-40 border-red-400  bg-red-50 text-red-400 placeholder-red-400 focus:border-red-400 dark:bg-red-900/20 dark:placeholder-white'
-							: ' border-grey-300 bg-grey-50 text-grey-500 placeholder-grey-300 dark:border-grey-700 dark:bg-grey-900 dark:text-grey-200 dark:focus:border-grey-0 focus:border-blue-500'}"
+							? 'dark:bg-opacity-20 placeholder-grey-300 dark:text-grey-200 dark:placeholder-grey-700 text-grey-500 border-red-400 bg-red-50  focus:border-red-400 dark:bg-red-900/10 focus:dark:bg-red-900/20'
+							: ' border-grey-300 bg-grey-50 text-grey-500 placeholder-grey-300 dark:placeholder-grey-700 dark:border-grey-700 dark:bg-grey-900 dark:text-grey-200 dark:focus:border-grey-0 focus:border-blue-500'}"
 						onclick={clickPhoneInput}
 						oninput={() => {
 							onInputPhoneText();
@@ -260,7 +260,7 @@
     ###
     -->
 	{#if showPopover}
-		<div class="absolute top-[80px] left-0 z-10 w-full group-hover:block">
+		<div class="absolute top-[80px] left-0 z-30 w-full group-hover:block">
 			<div
 				class="border-grey-300 bg-grey-0 dark:border-grey-700 dark:bg-grey-900 max-h-[200px] w-full overflow-y-scroll rounded-lg border-2 shadow-[0px_10px_18px_-4px_rgba(0,_0,_0,_0.25)] shadow-lg"
 			>
