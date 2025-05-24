@@ -1,12 +1,7 @@
 <script lang="ts">
-	import CountryPicker from '$lib/components/CountryPicker.svelte';
-	import PhonePicker from '$lib/components/PhonePicker.svelte';
 	import { contrastRatio, getContrastRating } from '$lib/utils/utils';
 
 	import Tile from '$lib/components/Tile.svelte';
-
-	let country = $state(''); //$state('es');
-	let phone = $state('02349');
 
 	let paletteGrey = [
 		{ 'grey-1100': '#1e1f21' },
@@ -29,6 +24,14 @@
 		{ 'blue-300': '#9bdaff' },
 		{ 'blue-200': '#b8cfec' },
 		{ 'blue-100': '#c8dee9' }
+	];
+
+	let paletteGreen = [
+		{ 'green-600': '#3D5A20' },
+		{ 'green-400': '#7B965F' },
+		{ 'green-300': '#7CA340' },
+		{ 'green-200': '#8FC04B' },
+		{ 'green-100': '#CDEB9F' }
 	];
 
 	let reduxGrey = [
@@ -83,21 +86,12 @@
 </script>
 
 <div class="mx-auto w-[400px] p-10">
-	<div class="mb-4">
-		<CountryPicker
-			required={true}
-			id="country"
-			bind:value={country}
-			label="Pais *"
-			searchText="Buscar Pais"
-			selectText="Seleccionar Pais"
-		></CountryPicker>
-	</div>
-
-	<div class="mb-4">
-		<PhonePicker id="pagomovil-phone" bind:value={phone} label="Numero de telefono del Pagador *"
-		></PhonePicker>
-	</div>
+	<select name="palettes" id="palettes">
+		<option value="cleanGreen">Clean Grey</option>
+		<option value="cleanBlue">Clean Blue</option>
+		<option value="cleanGreen">Clean Green </option>
+		<option value="reduxGrey">Redux Grey</option>
+	</select>
 </div>
 
 <div class="mx-auto w-[80vw]">
@@ -120,6 +114,35 @@
 		{/each}
 	</div>
 
+	<div class="mt-2 mb-2 text-lg">Combinations UI</div>
+	<div class="flex flex-wrap">
+		{#each combinations as { bg, fg, label1, label2, contrast, rating }}
+			<div
+				class="flex-column mr-2 mb-2 flex h-[160px] w-[160px] flex-col items-center justify-center rounded"
+				style="background-color: {bg}; color: {fg};"
+			>
+				<div class="text-center">
+					<div class="text-lg font-bold">{label2}</div>
+					<div class="text-xs">{contrast} - {rating}</div>
+					<div class="text-[10px]">{label1}</div>
+				</div>
+
+				<div class="mt-2">
+					<div
+						class="h-[20px] w-[80px] rounded-sm text-center"
+						style="background-color: {fg};"
+					></div>
+				</div>
+				<div class="mt-2">
+					<div
+						class="h-[20px] w-[80px] rounded-sm text-center"
+						style="border-color: {fg}; border:1px solid; background: {bg};"
+					></div>
+				</div>
+			</div>
+		{/each}
+	</div>
+
 	<div class="mt-2 mb-2 text-lg">Combinations Text</div>
 	<div class="flex flex-wrap">
 		{#each combinations as { bg, fg, label1, label2, contrast, rating }}
@@ -130,6 +153,7 @@
 				<div class="text-center">
 					<div class="text-lg font-bold">{label2}</div>
 					<div class="text-xs">{contrast} - {rating}</div>
+					<div class="text-[10px]">{label1}</div>
 				</div>
 			</div>
 		{/each}
